@@ -5,6 +5,7 @@
         <i class="fa fa-users"></i>  Student Regisiter
         <small>Add / Edit Student</small>
       </h1>
+      
     </section>
     
     <section class="content">
@@ -26,36 +27,37 @@
                     <div class="box-header">
                         <h3 class="box-title">Enter Student Details</h3>
                     </div><!-- /.box-header -->
+                
                     <!-- form start -->
                     <?php $this->load->helper("form"); ?>
-                    <form role="form" id="addUser" action="<?php echo base_url() ?>addNewStudent" method="post" role="form">
+                    <form role="form" id="addUser" action="<?php echo base_url() ?>Student/addNewStudent" method="post" role="form">
                         <div class="box-body">
                             <div class="row">
                                 <div class="col-md-3">                                
                                     <div class="form-group">
                                         <label for="sname">Student_Name</label>
-                                        <input type="text" class="form-control required" value="<?php echo set_value('Student_Name'); ?>" id="sname" name="fname" maxlength="128">
+                                        <input type="text" class="form-control" value="<?php echo set_value('Student_Name'); ?>" id="sname" name="Student_Name" maxlength="128">
                                     </div>
                                     
                                 </div>
                                 <div class="col-md-3">                                
                                     <div class="form-group">
                                         <label for="fname">Fathers_Name</label>
-                                        <input type="text" class="form-control required" value="<?php echo set_value('Fathers_Name'); ?>" id="fname" name="fname" maxlength="128">
+                                        <input type="text" class="form-control" value="<?php echo set_value('Fathers_Name'); ?>" id="fname" name="Fathers_Name" maxlength="128">
                                     </div>
                                     
                                 </div>
                                 <div class="col-md-3">                                
                                     <div class="form-group">
                                         <label for="mname">Mother_Name</label>
-                                        <input type="text" class="form-control required" value="<?php echo set_value('Mother_Name'); ?>" id="mname" name="fname" maxlength="128">
+                                        <input type="text" class="form-control" value="<?php echo set_value('Mother_Name'); ?>" id="mname" name="Mother_Name" maxlength="128">
                                     </div>
                                     
                                 </div>
                                 <div class="col-md-3">   
                                     <div class="form-group">
                                         <label for="group">Student_Blood_Group</label>
-                                        <select class="form-control required" id="group" name="role">
+                                        <select class="form-control" id="group" name="role">
                                             <option value="0">Blood_Group</option>
                                             <?php
                                             if(!empty($roles))
@@ -63,7 +65,12 @@
                                                 foreach ($roles as $rl)
                                                 {
                                                     ?>
-                                                    <option value="<?php echo $rl->roleId ?>" <?php if($rl->roleId == set_value('role')) {echo "selected=selected";} ?>><?php echo $rl->role ?></option>
+                                                    <option value="<?php echo $rl->roleId ?>" 
+                                                    <?php if($rl->roleId == set_value('role')) 
+                                                        {
+                                                        echo "selected=selected";
+                                                        } 
+                                                    ?>><?php echo $rl->role ?></option>
                                                     <?php
                                                 }
                                             }
@@ -77,19 +84,19 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="mobile">Student_Mobile_No</label>
-                                        <input type="text" class="form-control required digits" id="mobile" value="<?php echo set_value('mobile'); ?>" name="mobile" maxlength="10">
+                                        <input type="text" class="form-control digits" id="mobile" value="<?php echo set_value('mobile'); ?>" name="mobile" maxlength="10">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="email">Student_emailid</label>
-                                        <input type="text" class="form-control required email" id="email" value="<?php echo set_value('email'); ?>" name="email" maxlength="128">
+                                        <input type="text" class="form-control email" id="email" value="<?php echo set_value('email'); ?>" name="email" maxlength="128">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="pmobile">Parent_Contact_No</label>
-                                        <input type="text" class="form-control required digits" id="pmobile" value="<?php echo set_value('pmobile'); ?>" name="pmobile" maxlength="10">
+                                        <input type="text" class="form-control digits" id="pmobile" value="<?php echo set_value('pmobile'); ?>" name="pmobile" maxlength="10">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -113,7 +120,7 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="group">Sex</label>
-                                        <select class="form-control required" id="group" name="role">
+                                        <select class="form-control" id="group" name="role">
                                             <option value="0"></option>
                                             <?php
                                             if(!empty($roles))
@@ -132,7 +139,7 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="community">Community</label>
-                                        <select class="form-control required" id="group" name="role">
+                                        <select class="form-control" id="group" name="role">
                                             <option value="0"></option>
                                             <?php
                                             if(!empty($roles))
@@ -151,7 +158,7 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="community">Caste</label>
-                                        <select class="form-control required" id="group" name="role">
+                                        <select class="form-control" id="group" name="role">
                                             <option value="0"></option>
                                             <?php
                                             if(!empty($roles))
@@ -170,7 +177,7 @@
                                 <div class="col-md-3">
                                 <div class="form-group">
                                         <label for="community">Nationality</label>
-                                        <select class="form-control required" id="group" name="role">
+                                        <select class="form-control" id="group" name="role">
                                             <option value="0"></option>
                                             <?php
                                             if(!empty($roles))
@@ -193,25 +200,25 @@
                                 <div class="col-md-1">
                                     <div class="form-group">
                                         <label for="mname">Door_No</label>
-                                        <input type="text" class="form-control required" value="<?php echo set_value('Mother_Name'); ?>" id="mname" name="fname" maxlength="128">
+                                        <input type="text" class="form-control" value="<?php echo set_value('Mother_Name'); ?>" id="mname" name="fname" maxlength="128">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="mname">Street_Name</label>
-                                        <input type="text" class="form-control required" value="<?php echo set_value('Mother_Name'); ?>" id="mname" name="fname" maxlength="128">
+                                        <input type="text" class="form-control" value="<?php echo set_value('Mother_Name'); ?>" id="mname" name="fname" maxlength="128">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="mname">Area_Name</label>
-                                        <input type="text" class="form-control required" value="<?php echo set_value('Mother_Name'); ?>" id="mname" name="fname" maxlength="128">
+                                        <input type="text" class="form-control" value="<?php echo set_value('Mother_Name'); ?>" id="mname" name="fname" maxlength="128">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="community">City</label>
-                                        <select class="form-control required" id="group" name="role">
+                                        <select class="form-control" id="group" name="role">
                                             <option value="0"></option>
                                             <?php
                                             if(!empty($roles))
@@ -232,13 +239,13 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="mname">PinCode</label>
-                                        <input type="text" class="form-control required" value="<?php echo set_value('Mother_Name'); ?>" id="mname" name="fname" maxlength="128">
+                                        <input type="text" class="form-control" value="<?php echo set_value('Mother_Name'); ?>" id="mname" name="fname" maxlength="128">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="community">State</label>
-                                        <select class="form-control required" id="group" name="role">
+                                        <select class="form-control" id="group" name="role">
                                             <option value="0"></option>
                                             <?php
                                             if(!empty($roles))
@@ -262,10 +269,7 @@
                             <input type="submit" class="btn btn-primary" value="Submit" />
                             <input type="reset" class="btn btn-default" value="Reset" />
                         </div>
-                    </form>
-                </div>
-            </div>
-            <div class="col-md-4">
+                        <div class="col-md-4">
                 <?php
                     $this->load->helper('form');
                     $error = $this->session->flashdata('error');
@@ -293,7 +297,11 @@
                         <?php echo validation_errors('<div class="alert alert-danger alert-dismissable">', ' <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button></div>'); ?>
                     </div>
                 </div>
-              </div>
+            </div>
+                    </form>
+                </div>
+            </div>
+           
               <!-- /.tab-pane -->
               <div class="tab-pane" id="tab_2">
                 The European languages are members of the same family. Their separate existence is a myth.
