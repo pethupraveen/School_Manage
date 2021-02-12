@@ -13,9 +13,17 @@ class Student extends BaseController {
 
     public function index()
     {
+
+        $this->db->select('*');    
+		$this->db->from('tbl_student');
+        $query = $this->db->get();
+		$data['query']= $query->result_array();
+
         $this->global['pageTitle'] = 'SchoolName : Dashboard';
         
-        $this->loadViews("student", $this->global, NULL , NULL);
+        $this->loadViews("student", $this->global, $data , NULL);
+
+        
     }
 
     function addStudent()
@@ -58,9 +66,28 @@ class Student extends BaseController {
                 $Student_Name = $this->input->post('Student_Name');
                 $Fathers_Name = $this->input->post('Fathers_Name');
                 $Mother_Name = $this->input->post('Mother_Name');
-               
+                $Student_Blood_Group = $this->input->post('Student_Blood_Group');
+                $mobile = $this->input->post('mobile');
+                $email = $this->input->post('email');
+                $pmobile = $this->input->post('pmobile');
+                $dob = $this->input->post('dob');
+                $Sex = $this->input->post('Sex');
+                $Community = $this->input->post('Community');
+                $Caste = $this->input->post('Caste');
+                $Nationality = $this->input->post('Nationality');
+                $Door_No = $this->input->post('Door_No');
+                $Street_Name = $this->input->post('Street_Name');
+                $Area_Name = $this->input->post('Area_Name');
+                $City = $this->input->post('City');
+                $PinCode = $this->input->post('PinCode');
+                $State = $this->input->post('State');
+                
+                
                 $studentInfo = array('Student_Name'=>$Student_Name, 'Fathers_Name'=>$Fathers_Name,
-                 'Mother_Name'=>$Mother_Name);
+                 'Mother_Name'=>$Mother_Name,'Student_Blood_Group'=>$Student_Blood_Group,'Student_Mobile_No'=>$mobile,
+                 'Student_emailid'=>$email,'Parent_Contact_No'=>$pmobile,'Date_of_Birth'=>$dob,
+                 'Sex'=>$Sex, 'Community'=>$Community, 'Caste'=>$Caste,'Nationality'=>$Nationality,'Door_No'=>$Door_No,'Street_Name'=>$Street_Name,'Area_Name'=>$Area_Name,
+                 'City'=>$City,'PinCode'=>$PinCode,'State'=>$State);
                 $this->load->model('Student_model');
                 $result = $this->Student_model->addNewStudent($studentInfo);
                 

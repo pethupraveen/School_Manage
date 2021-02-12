@@ -16,6 +16,16 @@ class Student_model extends CI_Model {
         
         return $insert_id;
     }
+    function studentListing()
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_student');
+       
+        $query = $this->db->get();
+        
+        $result = $query->result();        
+        return $result;
+    }
                         
                             
                         

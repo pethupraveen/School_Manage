@@ -119,7 +119,7 @@
             <li>
               <a href="<?php echo base_url(); ?>Student">
               <i class="fa fa-user-plus"></i>
-                <span>Student Regisiter</span>
+                <span>Student Master</span>
               </a>
             </li>
            
