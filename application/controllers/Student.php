@@ -105,6 +105,33 @@ class Student extends BaseController {
 
         }
     }
+    public function Student_Edit($id)
+	{
+        if($this->isAdmin() == TRUE)
+        {
+            $this->loadThis();
+        }
+        else
+        {
+            $this->load->model('user_model');
+            $this->load->model('Student_model');
+            $data['roles'] = $this->user_model->getUserRoles();
+            
+            $this->global['pageTitle'] = 'School Name : Add New Student';
+
+           
+
+		    $query = $this->db->select('*')->from('tbl_student')->where('Student_ID', $id);
+			$query = $this->db->get();
+
+			$data['row'] = $query->row_array();
+			//$data['query1'] = $query2->result_array();
+            $this->loadViews("Student_Edit", $this->global, $data, NULL);
+			
+        }
+		
+	}
+
         
 }
         

@@ -87,7 +87,7 @@
 					<td><?=$row['Sex']?></td>
 					<td><?=$row['State']?></td>
 					<td class="text-center">
-                        <a class="btn btn-sm btn-info" href="<?php echo base_url().'editOld/'.$row['Student_ID']; ?>" title="Edit"><i class="fa fa-pencil"></i></a>
+                        <a class="btn btn-sm btn-info" href="<?php echo base_url().'Student\Student_Edit/'.$row['Student_ID']; ?>" title="Edit"><i class="fa fa-pencil"></i></a>
                         <a class="btn btn-sm btn-danger deleteUser" href="#" data-userid="<?php echo $row['Student_ID']; ?>" title="Delete"><i class="fa fa-trash"></i></a>
 					</td>
 
