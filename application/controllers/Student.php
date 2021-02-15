@@ -131,6 +131,40 @@ class Student extends BaseController {
         }
 		
 	}
+    public function Update_data($id)
+	{
+		
+		$data= array(
+                'Student_Name' => $this->input->post('Student_Name'),
+                'Fathers_Name' => $this->input->post('Fathers_Name'),
+                'Mother_Name' => $this->input->post('Mother_Name'),
+                'Student_Blood_Group' => $this->input->post('Student_Blood_Group'),
+                'Student_Mobile_No' => $this->input->post('mobile'),
+                'Student_emailid' => $this->input->post('email'),
+                'Parent_Contact_No'=> $this->input->post('pmobile'),
+                'Date_of_Birth'=> $this->input->post('dob'),
+                'Sex'=> $this->input->post('Sex'),
+                'Community'=> $this->input->post('Community'),
+                'Caste'=> $this->input->post('Caste'),
+                'Nationality'=> $this->input->post('Nationality'),
+                'Door_No'=> $this->input->post('Door_No'),
+                'Street_Name'=> $this->input->post('Street_Name'),
+                'Area_Name'=> $this->input->post('Area_Name'),
+                'City'=> $this->input->post('City'),
+                'PinCode'=> $this->input->post('PinCode'),
+                'State'=> $this->input->post('State')				
+					);
+		$this->db->update('tbl_student', $data, array('Student_ID' => $id));
+		$this->session->set_flashdata('message', 'Your data updated Successfully..');
+		redirect("Student");
+	}
+    public function Student_Delete($id)
+	{
+		$id = $this->db->where('Student_ID',$id);
+		$this->db->delete('tbl_student');
+		$this->session->set_flashdata('message', 'Your data deleted Successfully..');
+		redirect("Student");
+	}
 
         
 }

@@ -87,8 +87,8 @@
 					<td><?=$row['Sex']?></td>
 					<td><?=$row['State']?></td>
 					<td class="text-center">
-                        <a class="btn btn-sm btn-info" href="<?php echo base_url().'Student\Student_Edit/'.$row['Student_ID']; ?>" title="Edit"><i class="fa fa-pencil"></i></a>
-                        <a class="btn btn-sm btn-danger deleteUser" href="#" data-userid="<?php echo $row['Student_ID']; ?>" title="Delete"><i class="fa fa-trash"></i></a>
+                        <a class="btn btn-sm btn-info" href="<?php echo base_url().'Student\Student_Edit/'.$row['Student_ID']; ?>" onclick="return confirm('Are you sure want to Edit this Student Details?')" title="Edit"><i class="fa fa-pencil"></i></a>
+                        <a class="btn btn-sm btn-danger" href="javascript:void(0);" onclick="return confirm('Are you sure want to Delete this Student Details?')" title="Delete"><i class="fa fa-trash"></i></a>
 					</td>
 
 				</tr>
@@ -104,6 +104,7 @@
         </div>
     </section>
 </div>
+
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/common.js" charset="utf-8"></script>
 <script type="text/javascript">
     jQuery(document).ready(function(){

@@ -30,7 +30,7 @@
                 
                     <!-- form start -->
                     <?php $this->load->helper("form"); ?>
-                    <form role="form" id="addUser" action="<?php echo base_url() ?>Student/addNewStudent" method="post" role="form">
+                    <form role="form" id="addUser" action="<?php echo base_url() ?>Student/Update_data/<?php echo $row['Student_ID']?>" method="post" role="form">
                         <div class="box-body">
                             <div class="row">
                                 <div class="col-md-3">                                
@@ -217,8 +217,9 @@
                         </div><!-- /.box-body -->
     
                         <div class="box-footer">
-                            <input type="submit" class="btn btn-primary" value="Submit" />
+                            <input type="submit" class="btn btn-primary" value="Update" />
                             <input type="reset" class="btn btn-default" value="Reset" />
+                            
                         </div>
                         <div class="col-md-4">
                 <?php
@@ -292,4 +293,4 @@
     </section>
     
 </div>
-<script src="<?php echo base_url(); ?>assets/js/addUser.js" type="text/javascript"></script>
+<script src="<?php echo base_url(); ?>assets/js/deletestudent.js" type="text/javascript"></script>
