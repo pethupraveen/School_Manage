@@ -36,28 +36,28 @@
                                 <div class="col-md-3">                                
                                     <div class="form-group">
                                         <label for="sname">Student_Name</label>
-                                        <input type="text" placeholder="Student_Name" class="form-control" value="<?php echo set_value('Student_Name'); ?>" id="sname" name="Student_Name" maxlength="128">
+                                        <input type="text" placeholder="Student_Name" required="required" class="form-control" value="<?php echo set_value('Student_Name'); ?>" id="sname" name="Student_Name" maxlength="128">
                                     </div>
                                     
                                 </div>
                                 <div class="col-md-3">                                
                                     <div class="form-group">
                                         <label for="fname">Fathers_Name</label>
-                                        <input type="text" placeholder="Fathers_Name" class="form-control" value="<?php echo set_value('Fathers_Name'); ?>" id="fname" name="Fathers_Name" maxlength="128">
+                                        <input type="text" placeholder="Fathers_Name" required="required" class="form-control" value="<?php echo set_value('Fathers_Name'); ?>" id="fname" name="Fathers_Name" maxlength="128">
                                     </div>
                                     
                                 </div>
                                 <div class="col-md-3">                                
                                     <div class="form-group">
                                         <label for="mname">Mother_Name</label>
-                                        <input type="text" placeholder="Mother_Name" class="form-control" value="<?php echo set_value('Mother_Name'); ?>" id="mname" name="Mother_Name" maxlength="128">
+                                        <input type="text" placeholder="Mother_Name"  required="required" class="form-control" value="<?php echo set_value('Mother_Name'); ?>" id="mname" name="Mother_Name" maxlength="128">
                                     </div>
                                     
                                 </div>
                                 <div class="col-md-3">   
                                     <div class="form-group">
                                         <label for="group">Student_Blood_Group</label>
-                                        <select class="form-control" id="group" name="Student_Blood_Group">
+                                        <select class="form-control" id="group" name="Student_Blood_Group" required="required">
                                             <option value="0">Blood_Group</option>
                                             <option value="o+">O+</option>
                                             <option value="o-">O-</option>
@@ -84,13 +84,13 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="email">Student_emailid</label>
-                                        <input type="text" placeholder="Student_emailid" class="form-control email" id="email" value="<?php echo set_value('email'); ?>" name="email" maxlength="128">
+                                        <input type="text" placeholder="Student_emailid" required="required" class="form-control email" id="email" value="<?php echo set_value('email'); ?>" name="email" maxlength="128">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="pmobile">Parent_Contact_No</label>
-                                        <input type="text" class="form-control digits" id="pmobile" value="<?php echo set_value('pmobile'); ?>" name="pmobile" maxlength="10" data-fv-numeric="true" data-fv-numeric-message="Please enter valid phone numbers" data-fv-phone-country11="IN" required="required" data-fv-notempty-message="This field cannot be left blank." placeholder="Parent Mobile No. " data-fv-field="data[User][mobile]">
+                                        <input type="text" class="form-control digits" required="required" id="pmobile" value="<?php echo set_value('pmobile'); ?>" name="pmobile" maxlength="10" data-fv-numeric="true" data-fv-numeric-message="Please enter valid phone numbers" data-fv-phone-country11="IN" required="required" data-fv-notempty-message="This field cannot be left blank." placeholder="Parent Mobile No. " data-fv-field="data[User][mobile]">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -100,7 +100,7 @@
                                         <div class="input-group-addon">
                                             <i class="fa fa-calendar"></i>
                                         </div>
-                                        <input type="text" class="form-control" id="dob" name="dob" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
+                                        <input type="text" class="form-control" required="required" id="dob" name="dob" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
                                     </div>
                                     <!-- /.input group -->
                                 </div>
@@ -113,7 +113,8 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="Sex">Sex</label>
-                                        <select class="form-control" placeholder="Sex" id="Sex" name="Sex">
+                                        <select class="form-control" placeholder="Sex" id="Sex" name="Sex" required="required">
+                                        <option value="" disabled selected hidden>Please Choose...</option>
                                             <option value="Male">Male</option>
                                             <option value="Female">Female</option>
                                         </select>
@@ -122,8 +123,8 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="community">Community</label>
-                                        <select class="form-control" placeholder="Community" id="Community" name="Community">
-                                            <option value="0"></option>
+                                        <select class="form-control" placeholder="Community" required="required" id="Community" name="Community">
+                                        <option value="" disabled selected hidden>Please Choose...</option>
                                             <option value="Hindu">Hindu</option>
                                             <option value="Muslim">Muslim</option>
                                             <option value="Christian">Christian</option>
@@ -134,8 +135,8 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="community">Caste</label>
-                                        <select class="form-control" placeholder="Caste" id="Caste" name="Caste">
-                                            <option value="0"></option>
+                                        <select class="form-control" placeholder="Caste" required="required" id="Caste" name="Caste">
+                                        <option value="" disabled selected hidden>Please Choose...</option>
                                             <option value="Caste1">Caste1</option>
                                             <option value="Caste2">Caste2</option>
                                             <option value="Caste3">Caste3</option>
@@ -146,8 +147,8 @@
                                 <div class="col-md-3">
                                 <div class="form-group">
                                         <label for="community">Nationality</label>
-                                        <select class="form-control" placeholder="Nationality" id="Nationality" name="Nationality">
-                                            <option value="0"></option>
+                                        <select class="form-control" placeholder="Nationality" required="required" id="Nationality" name="Nationality">
+                                        <option value="" disabled selected hidden>Please Choose...</option>
                                             <option value="India">India</option>
                                             <option value="Others">Others</option>
                                         </select>
@@ -160,26 +161,26 @@
                                 <div class="col-md-1">
                                     <div class="form-group">
                                         <label for="Door_No">Door_No</label>
-                                        <input type="text" class="form-control" placeholder="Door_No" value="<?php echo set_value('Door_No'); ?>" id="Door_No" name="Door_No" maxlength="128">
+                                        <input type="text" class="form-control" required="required" placeholder="Door_No" value="<?php echo set_value('Door_No'); ?>" id="Door_No" name="Door_No" maxlength="128">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="Street_Name">Street_Name</label>
-                                        <input type="text" class="form-control" placeholder="Street_Name" value="<?php echo set_value('Street_Name'); ?>" id="Street_Name" name="Street_Name" maxlength="128">
+                                        <input type="text" class="form-control" required="required" placeholder="Street_Name" value="<?php echo set_value('Street_Name'); ?>" id="Street_Name" name="Street_Name" maxlength="128">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="Area_Name">Area_Name</label>
-                                        <input type="text" class="form-control" placeholder="Area_Name" value="<?php echo set_value('Area_Name'); ?>" id="Area_Name" name="Area_Name" maxlength="128">
+                                        <input type="text" class="form-control" required="required" placeholder="Area_Name" value="<?php echo set_value('Area_Name'); ?>" id="Area_Name" name="Area_Name" maxlength="128">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="community">City</label>
-                                        <select class="form-control" id="City" name="City">
-                                            <option value="0"></option>
+                                        <select class="form-control" id="City" required="required" name="City">
+                                        <option value="" disabled selected hidden>Please Choose...</option>
                                             <option value="Madurai">Madurai</option>
                                             <option value="Chennai">Chennai</option>
                                             <option value="Coimbatore">Coimbatore</option>
@@ -192,15 +193,16 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="PinCode">PinCode</label>
-                                        <input type="text" class="form-control digits" id="PinCode" value="<?php echo set_value('PinCode'); ?>" name="PinCode" maxlength="6" data-fv-numeric="true" data-fv-numeric-message="Please enter valid phone numbers" data-fv-phone-country11="IN" required="required" data-fv-notempty-message="This field cannot be left blank." placeholder="PinCode 6 digits.." data-fv-field="data[User][mobile]">
+                                        <input type="text" class="form-control digits" required="required" id="PinCode" value="<?php echo set_value('PinCode'); ?>" name="PinCode" maxlength="6" data-fv-numeric="true" data-fv-numeric-message="Please enter valid phone numbers" data-fv-phone-country11="IN" required="required" data-fv-notempty-message="This field cannot be left blank." placeholder="PinCode 6 digits.." data-fv-field="data[User][mobile]">
                                        
                                     </div>
                                 </div>
+                                <style>select:invalid { color: gray; }</style>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="community">State</label>
-                                        <select class="form-control" id="State" name="State">
-                                            <option value="0"></option>
+                                        <select class="form-control" id="State" required="required" name="State" placeholder="State">
+                                            <option value="" disabled selected hidden>Please Choose...</option>
                                             <option value="Tamil_Nadu">Tamil_Nadu</option>
                                             <option value="Kerala">Kerala</option>
                                             <option value="Andhra_Pradesh">Andhra_Pradesh</option>
