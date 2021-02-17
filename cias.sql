@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 12, 2021 at 05:15 PM
+-- Generation Time: Feb 17, 2021 at 03:56 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 5.6.38
 
@@ -35,6 +35,91 @@ CREATE TABLE `ci_sessions` (
   `last_activity` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `user_data` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `employee`
+--
+
+CREATE TABLE `employee` (
+  `empstr` varchar(5) DEFAULT 'emp',
+  `empno` int(5) NOT NULL,
+  `empcode` varchar(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `employee`
+--
+
+INSERT INTO `employee` (`empstr`, `empno`, `empcode`) VALUES
+('emp', 101, 'emp101'),
+('emp', 102, 'emp102'),
+('emp', 103, 'emp103');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `so`
+--
+
+CREATE TABLE `so` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `so`
+--
+
+INSERT INTO `so` (`id`, `name`) VALUES
+(1, 'John'),
+(2, 'Mark'),
+(3, 'Mark3');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_category`
+--
+
+CREATE TABLE `tbl_category` (
+  `Category ID` int(150) NOT NULL,
+  `Category Type` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_course`
+--
+
+CREATE TABLE `tbl_course` (
+  `Course ID` int(150) NOT NULL,
+  `Course` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_department`
+--
+
+CREATE TABLE `tbl_department` (
+  `Department ID` int(150) NOT NULL,
+  `Department` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_fees`
+--
+
+CREATE TABLE `tbl_fees` (
+  `Fee Details` varchar(150) NOT NULL,
+  `Fees` int(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -73,7 +158,13 @@ INSERT INTO `tbl_last_login` (`id`, `userId`, `sessionData`, `machineIp`, `userA
 (13, 1, '{\"role\":\"1\",\"roleText\":\"System Administrator\",\"name\":\"System Administrator\"}', '::1', 'Chrome 88.0.4324.150', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36', 'Windows 10', '2021-02-12 12:20:08'),
 (14, 1, '{\"role\":\"1\",\"roleText\":\"System Administrator\",\"name\":\"System Administrator\"}', '::1', 'Chrome 88.0.4324.150', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36', 'Windows 10', '2021-02-12 16:50:43'),
 (15, 1, '{\"role\":\"1\",\"roleText\":\"System Administrator\",\"name\":\"System Administrator\"}', '::1', 'Chrome 88.0.4324.150', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36', 'Windows 10', '2021-02-12 19:26:13'),
-(16, 1, '{\"role\":\"1\",\"roleText\":\"System Administrator\",\"name\":\"System Administrator\"}', '::1', 'Chrome 88.0.4324.150', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36', 'Windows 10', '2021-02-12 21:45:11');
+(16, 1, '{\"role\":\"1\",\"roleText\":\"System Administrator\",\"name\":\"System Administrator\"}', '::1', 'Chrome 88.0.4324.150', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36', 'Windows 10', '2021-02-12 21:45:11'),
+(17, 1, '{\"role\":\"1\",\"roleText\":\"System Administrator\",\"name\":\"System Administrator\"}', '::1', 'Chrome 88.0.4324.150', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36', 'Windows 10', '2021-02-15 11:32:46'),
+(18, 3, '{\"role\":\"3\",\"roleText\":\"Employee\",\"name\":\"Employee\"}', '::1', 'Chrome 88.0.4324.150', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36', 'Windows 10', '2021-02-17 20:11:35'),
+(19, 1, '{\"role\":\"1\",\"roleText\":\"System Administrator\",\"name\":\"System Administrator\"}', '::1', 'Chrome 88.0.4324.150', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36', 'Windows 10', '2021-02-17 20:22:04'),
+(20, 1, '{\"role\":\"1\",\"roleText\":\"System Administrator\",\"name\":\"System Administrator\"}', '::1', 'Chrome 88.0.4324.150', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36', 'Windows 10', '2021-02-17 20:22:18'),
+(21, 1, '{\"role\":\"1\",\"roleText\":\"System Administrator\",\"name\":\"System Administrator\"}', '::1', 'Chrome 88.0.4324.150', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36', 'Windows 10', '2021-02-17 20:22:42'),
+(22, 1, '{\"role\":\"1\",\"roleText\":\"System Administrator\",\"name\":\"System Administrator\"}', '::1', 'Chrome 88.0.4324.150', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36', 'Windows 10', '2021-02-17 20:25:20');
 
 -- --------------------------------------------------------
 
@@ -147,8 +238,9 @@ CREATE TABLE `tbl_student` (
 --
 
 INSERT INTO `tbl_student` (`Student_ID`, `Student_Name`, `Fathers_Name`, `Mother_Name`, `Student_Blood_Group`, `Student_Mobile_No`, `Student_emailid`, `Parent_Contact_No`, `Date_of_Birth`, `Sex`, `Community`, `Caste`, `Nationality`, `Door_No`, `Street_Name`, `Area_Name`, `City`, `PinCode`, `State`) VALUES
-(1, 'Praveen', 'Pethu Manickam', 'Dhanalakshmi', 'o+', '9944406172', 'praveenkumar.pdknp@gmail.com', '9894928051', '26/04/1994', 'Male', '', '', '', '', '', '', '', '', ''),
-(2, 'Praveen', 'Pethu Manickam', 'Dhanalakshmi', 'o+', '9944406172', 'praveenkumar.pdknp@gmail.com', '9894928051', '26/04/1994', 'Male', 'Hindu', 'Caste1', 'India', '302', 'Neruji Street', 'Mullai Nagar', 'Madurai', '625002', 'Tamil_Nadu');
+(1, 'Kumar', 'Pethu Manickam', 'Dhanalakshmi', 'o-', '9944406172', 'praveenkumar.pdknp@gmail.com', '9894928051', '26/04/2017', 'Female', 'Muslim', 'Caste2', 'India', '302', 'No 92, 7th Street, melaponagaram,mdu', 'Mullai Nagar', 'Madurai', '625016', 'Tamil_Nadu'),
+(2, 'Ravi Kumar', 'Pethu Manickam', 'Dhanalakshmi', 'o+', '9944406111', 'ravi@gmail.com', '9894928051', '12/06/2014', 'Male', 'Muslim', 'Caste1', 'India', '302', 'No 92, 7th Street, melaponagaram,mdu', 'Mullai Nagar', 'Madurai', '625016', 'Kerala'),
+(3, 'Naveen', 'Pethu Manickam', 'Dhanalakshmi', 'o+', '9944406172', 'admin@admin.com', '9894928051', '26/04/2064', 'Female', 'Muslim', 'Caste2', 'Others', '302', 'No 92, 7th Street, melaponagaram,mdu', 'Mullai Nagar', 'Coimbatore', '625016', 'Andhra_Pradesh');
 
 -- --------------------------------------------------------
 
@@ -175,10 +267,9 @@ CREATE TABLE `tbl_users` (
 --
 
 INSERT INTO `tbl_users` (`userId`, `email`, `password`, `name`, `mobile`, `roleId`, `isDeleted`, `createdBy`, `createdDtm`, `updatedBy`, `updatedDtm`) VALUES
-(1, 'admin@example.com', '$2a$04$nVftf3nwcsaEP3XjH9XTh./FBVOy7L9YGjv/SKYkJouQDp/Zd091K', 'System Administrator', '9890098900', 1, 0, 0, '2015-07-01 18:56:49', 1, '2018-01-05 05:56:34'),
+(1, 'admin@example.com', '$2a$04$GVrNvf8Ex2x0aP4febYp6uuVDXGhMN6VKMuLufALcZJFUVsrzsDOS', 'System Administrator', '9890098900', 1, 0, 0, '2015-07-01 18:56:49', 1, '2021-02-15 11:46:19'),
 (2, 'manager@example.com', '$2y$10$quODe6vkNma30rcxbAHbYuKYAZQqUaflBgc4YpV9/90ywd.5Koklm', 'Manager', '9890098900', 2, 0, 1, '2016-12-09 17:49:56', 1, '2018-01-12 07:22:11'),
-(3, 'employee@example.com', '$2y$10$PD.3ISoDCk2pFZE4TZX7k.Qe8jB9igwfrec7NrQWtZ3uYfwOGLTii', 'Employee', '9890098900', 3, 0, 1, '2016-12-09 17:50:22', 1, '2021-02-10 09:42:10'),
-(9, 'praveenkumar.pdknp@gmail.com', '$2y$10$aW0USlhLHqQ2R3fyPb9XJOqRH88mEAuPOCYuTX22UU083l.kKYS1y', 'Praveen', '9944406172', 3, 0, 1, '2021-02-10 09:48:59', NULL, NULL);
+(3, 'employee@example.com', '$2y$10$PD.3ISoDCk2pFZE4TZX7k.Qe8jB9igwfrec7NrQWtZ3uYfwOGLTii', 'Employee', '9890098900', 3, 0, 1, '2016-12-09 17:50:22', 1, '2021-02-10 09:42:10');
 
 --
 -- Indexes for dumped tables
@@ -190,6 +281,18 @@ INSERT INTO `tbl_users` (`userId`, `email`, `password`, `name`, `mobile`, `roleI
 ALTER TABLE `ci_sessions`
   ADD PRIMARY KEY (`session_id`),
   ADD KEY `last_activity_idx` (`last_activity`);
+
+--
+-- Indexes for table `employee`
+--
+ALTER TABLE `employee`
+  ADD PRIMARY KEY (`empno`);
+
+--
+-- Indexes for table `so`
+--
+ALTER TABLE `so`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tbl_last_login`
@@ -226,10 +329,22 @@ ALTER TABLE `tbl_users`
 --
 
 --
+-- AUTO_INCREMENT for table `employee`
+--
+ALTER TABLE `employee`
+  MODIFY `empno` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+
+--
+-- AUTO_INCREMENT for table `so`
+--
+ALTER TABLE `so`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `tbl_last_login`
 --
 ALTER TABLE `tbl_last_login`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `tbl_reset_password`
@@ -247,7 +362,7 @@ ALTER TABLE `tbl_roles`
 -- AUTO_INCREMENT for table `tbl_student`
 --
 ALTER TABLE `tbl_student`
-  MODIFY `Student_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Student_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tbl_users`
