@@ -60,7 +60,7 @@ class Login extends CI_Controller
         }
         else
         {
-            $email = strtolower($this->security->xss_clean($this->input->post('email')));
+            $email = $this->input->post('email');
             $password = $this->input->post('password');
             
             $result = $this->login_model->loginMe($email, $password);
