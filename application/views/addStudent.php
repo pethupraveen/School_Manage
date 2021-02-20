@@ -257,13 +257,35 @@
             </div>
            
               <!-- /.tab-pane -->
-              <div class="tab-pane" id="tab_2">
-                
+    <div class="tab-pane" id="tab_2">
+    
 
-              </div>
+
+    </div>
               <!-- /.tab-pane -->
-              <div class="tab-pane" id="tab_3">
-                
+            <div class="tab-pane" id="tab_3">
+                <div class="box box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">Upload Student Profile Image</h3>
+                    </div><!-- /.box-header -->
+                    <form role="form" id="addUser" action="<?php echo base_url() ?>Student/std_upload" name="ajax_form" id="ajax_form" method="post" role="form">
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-md-3 text-center">
+                                    <img src="<?php echo base_url() ?>assets/images/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
+                                    <h6>Upload a different photo...</h6>
+                                    <input type="file" class="text-center center-block file-upload">
+                                </div>
+                            </div>
+                        </div>
+
+                    <div class="box-footer">
+                            <input type="submit" class="btn btn-primary" value="Submit" />
+                            <input type="reset" class="btn btn-default" value="Reset" />
+                    </div>
+                    </form>
+
+                </div>
 
                 
               </div>
@@ -286,4 +308,26 @@
 </section>
     
 </div>
+<script>
+$(document).ready(function() {
+
+    
+var readURL = function(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('.avatar').attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+
+$(".file-upload").on('change', function(){
+    readURL(this);
+});
+});
+</script>
 <script src="<?php echo base_url(); ?>assets/js/addUser.js" type="text/javascript"></script>
